@@ -1,0 +1,9 @@
+1. mono ~/(your fsharp installation)/bin/fsc.exe Paint.fs Program.fs
+   ( ^ the 'compile' script does this )
+
+2. mono Program.exe
+
+3. open out.png.
+
+(for me on mac os x, this means my workflow is: ./compile && mono Program.exe && open out.png   
+ whenever I want to attempt to compile & run the program.)
