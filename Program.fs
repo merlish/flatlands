@@ -51,5 +51,6 @@ module Program =
     [<EntryPoint>]
     let main args =
         printfn "hi there!"
+        Paint.paint 640 400 [true; true; true; true; true; true; true; true;]
         0
 

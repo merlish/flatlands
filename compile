@@ -1,4 +1,4 @@
 #!/bin/sh
 #mono ~/FSharp-2.0.0.0/bin/Fsc.exe -r:Ionic.Zlib.dll SharedPacket.fs McSocket.fs ClientPacket.fs ServerPacket.fs TempKickstart.fs TcpClientHolder.fs ServerComms.fs Server.fs ServerSelector.fs Program.fs
-mono ~/FSharp-2.0.0.0/bin/fsc.exe Program.fs
+mono ~/FSharp-2.0.0.0/bin/fsc.exe Paint.fs Program.fs
 
