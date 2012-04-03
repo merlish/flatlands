@@ -48,9 +48,26 @@ module Program =
         let rf : RaycastFunc = fun (v0,v1) -> cubeTest min max v0 v1
         (rf, { min = min; max = max })
 
+    let ray (rfunc : RaycastFunc) w hw hh num =
+        let x = float ((num%w) - hw)
+        let y = float ((num/w) - hh)
+        rfunc ((0.0,0.0,0.0),(x*100.0,y*100.0,1000.0))
+
     [<EntryPoint>]
     let main args =
-        printfn "hi there!"
-        Paint.paint 640 400 [true; true; true; true; true; true; true; true;]
+        let (sw,sh) = (1280,800)
+
+        printfn "constructing geometry"
+        let geom = cube (0.0,0.0,55.0) 100.0
+        let rfunc = fst geom
+
+        printfn "casting rays"
+        let results = List.map (ray rfunc sw (sw/2) (sh/2)) [ 0 .. (sw*sh) ]
+        
+        printfn "painting result"
+        Paint.paint sw sh results
+
+        printfn "operation successful.  check out.png"
+
         0
 
